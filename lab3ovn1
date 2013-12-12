@@ -9,6 +9,7 @@ fi
 
 if [ "$tal1" -gt "$tal2" ]; then
     echo "$tal1 är större än $tal2"
-else
-    echo "$tal1 är mindre än $tal2"
+elif [ "$tal2" -gt "$tal1" ]; then
+    echo "$tal2 är större än $tal1"
 fi
+
