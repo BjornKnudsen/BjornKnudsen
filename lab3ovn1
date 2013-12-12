@@ -1,0 +1,15 @@
+#!/bin/bash
+read -p "Ange tal nr1: " tal1
+read -p "Ange tal nr2: " tal2
+if [ "$tal1" -eq "$tal2" ]; then
+    echo "talen är lika stora"
+else
+    echo "talen är inte lika stora"
+fi
+
+if [ "$tal1" -gt "$tal2" ]; then
+    echo "$tal1 är större än $tal2"
+elif [ "$tal2" -gt "$tal1" ]; then
+    echo "$tal2 är större än $tal1"
+fi
+
