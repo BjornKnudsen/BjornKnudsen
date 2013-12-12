@@ -1,0 +1,5 @@
+#!/bin/bash
+read -p "Vad heter du? " Namn
+read -p "Hur gammal är du? " Alder
+read -p "Vilken stad bor du i? " Stad
+echo "Hej $Namn, du är $Alder år och bor i $Stad."
