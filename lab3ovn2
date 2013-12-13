@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ ! -e ./medicin.txt ]; then
+    echo "Filen finns inte."
+fi
+if [ ! -r ./medicin.txt ]; then
+    echo "Filen kan inte läsas."
+fi
+if [ ! -w ./medicin.txt ]; then
+    echo "Kan inte skriva till filen."
+else
+    read -p "Ange lösenord " passwd
+    if [ "$passwd" = "hb99" ]; then
+        vim medicin.txt
+    else
+        echo "Fel lösenord"
+    fi
+fi
