@@ -1,0 +1,7 @@
+#!/bin/bash
+read -p "Gissa vilket tal jag tänker på " Gissa
+    if [ $Gissa = 7 ]; then
+        echo "Tur för dig..."
+        else
+            echo "Du ska ha stryk!"
+fi

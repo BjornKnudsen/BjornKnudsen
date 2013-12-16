@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ ! -e ./"$1" -o ! -r ./"$1" ]; then
+    echo "ERROR. $1 finns inte, eller är inte så är den inte läsbar."
+fi
+if [ -b ./"$1" ]; then
+    echo "$1 är en block device."
+elif [ -c ./"$1" ]; then
+    echo "$1 är en character device."
+fi
+if [ -d ./"$1" ];then
+    echo "$1 är en katalog."
+fi
+if [ -h /."$1" -o -L ./"$1" ]; then
+    echo "$1 är en länk."
+fi
+exit 0
+
