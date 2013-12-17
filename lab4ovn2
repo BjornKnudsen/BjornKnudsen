@@ -1,0 +1,18 @@
+#!/bin/bash
+read -p "Vill du konvertera från SEK eller USD? " Valuta   
+read -p "Hur många $Valuta? " Belopp
+if [ $Valuta = "SEK" ]; then
+    let Svar="$Belopp*6"
+    echo "$Belopp $Valuta = $Svar USD"
+fi
+if [ $Valuta = "USD" ]; then
+    let Svar="$Belopp/6"
+    let Rest="$Belopp%6"
+    echo "$Belopp $Valuta = $Svar.$Rest SEK"
+fi
+#if [ $Valuta != "SEK" ]; then
+#    echo "Valuta felaktigt angiven"
+#fi
+#if [ $Valuta != "USD" ]; then
+#    echo "Valuta felaktigt angiven"
+#fi
