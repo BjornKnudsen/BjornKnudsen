@@ -1,0 +1,21 @@
+#!/bin/bash
+echo -e "\e[00;31mKlip dig & skaffa ett jobb 1.0 Beta\e[00m"
+echo "Det här programmet är speciellt utformat för dig som behöver en förändring i ditt liv."
+read -p "Hur mycket pengar behöver du spara ihop? (ex: 5000) " Summa
+read -p "Hur många månader får det ta? " Tid
+read -p "Vill du ha längre hår?(J/N) " Hair
+if [ "$Hair" = "J" ]; then
+    read -p "Hur många cm vill du att ditt hår ska växa? " HGrow
+    elif [ "$Hair" = "N" ]; then
+        echo " "
+fi
+let Svar="$Summa/$Tid"
+let SvarRest="$Summa%$Tid"
+echo "Du behöver spara $Svar.$SvarRest kr per månad för att uppnå ditt mål."
+if [ ! -z "$HGrow" ]; then
+    echo "Det kommer ta ca $HGrow månader för dig att nå önskad hårlängd"
+        elif [ "$HGrow" = "0" ]; then
+            echo "Jaha, så du vill att ditt hår ska växa 0 cm? =))"
+        elif [ -z "$HGrow" ]; then
+            echo "Ditt hår är redan najs!"
+fi
