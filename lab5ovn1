@@ -1,0 +1,6 @@
+#!/bin/bash
+read -p "Ange ett tal från 10 till 100 " Tal
+until [ "$Tal" = "-1" ]; do
+    echo "$Tal"
+    Tal=$[ Tal - 1 ]
+done
