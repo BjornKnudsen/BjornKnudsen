@@ -1,0 +1,16 @@
+#!/bin/bash
+if  [ ! -e ./betyg.txt ]; then
+    echo "betyg.txt finns inte."
+else
+    Summa=$( cat betyg.txt )
+fi
+for i in $Summa; do
+    Resultat=$[ $Resultat + $i ]
+done
+if [ "$Resultat" -ge "6" ]; then
+    echo "Ditt betyg är: G"
+elif [ "$Resultat" -ge "10" ]; then
+    echo "Ditt betyg är: VG"
+else
+    echo "Du blev inte godkänd."
+fi
