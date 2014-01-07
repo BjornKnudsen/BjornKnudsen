@@ -1,0 +1,10 @@
+#!/bin/bash
+read -p "Hur många stjärnor ska jag skriva ut? " Stjarnor
+function CountingStars {
+until [ $Stjarnor = 0 ]; do
+    echo "*"
+    ((Stjarnor--))
+done
+}
+CountingStars
+exit 0

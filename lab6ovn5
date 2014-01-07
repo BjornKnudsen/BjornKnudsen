@@ -1,0 +1,5 @@
+#!/bin/bash
+declare -a array=(df | grep dev)
+echo ${array[1]}
+
+exit 0

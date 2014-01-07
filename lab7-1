@@ -1,0 +1,3 @@
+#!/bin/bash
+dialog --menu "Välj vilken webläsare du vill starta" 10 60 2 Chrome "Webläsaren Chrome" Firefox "Webläsaren FireFox" 2> /tmp/weblasare
+exit 0

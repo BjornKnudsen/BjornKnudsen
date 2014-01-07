@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $EUID -eq 0 ]; then
+    rm -r /tmp/*
+else
+    echo "Du har inte rätt behörigheter."
+fi
+    exit 0

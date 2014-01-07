@@ -1,0 +1,29 @@
+#!/bin/bash
+echo "Ange två heltal"
+read -p "Tal nr1: " Tal1
+read -p "Tal nr2: " Tal2
+function Plus {
+Psum=$[ $Tal1+$Tal2 ]
+echo "$Tal1 + $Tal2 = $Psum"
+}
+
+function Minus {
+Msum=$[ $Tal1-$Tal2 ]
+echo "$Tal1 - $Tal2 = $Msum"
+}
+
+function Delat {
+Dsum=$[ $Tal1/$Tal2 ]
+echo "$Tal1 / $Tal2 = $Dsum"
+}
+
+function Ganger {
+Gsum=$[ $Tal1*$Tal2 ]
+echo "$Tal1 * $Tal2 = $Gsum"
+}
+
+Plus
+Minus
+Ganger
+Delat
+exit 0

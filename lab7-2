@@ -1,0 +1,31 @@
+#!/bin/bash
+dialog --inputbox "subnet" 10 60 2> /tmp/d1
+dialog --inputbox "netmask" 10 60 2> /tmp/d2
+dialog --inputbox "from range" 10 60 2> /tmp/d3
+dialog --inputbox "To range" 10 60 2> /tmp/d4
+dialog --inputbox "option domain-name-servers" 10 60 2> /tmp/d5
+dialog --inputbox "Option routers" 10 60 2> /tmp/d6
+dialog --inputbox "ddns-update-style" 10 60 2> /tmp/d7
+dialog --inputbox "default-lease-time" 10 60 2> /tmp/d8
+dialog --inputbox "max-lease-time" 10 60 2> /tmp/d9
+
+Subnet=`cat /tmp/d1`
+Netmask=`cat /tmp/d2`
+Frange=`cat /tmp/d3`
+Trange=`cat /tmp/d4`
+ODNS=`cat /tmp/d5`
+Routers=`cat /tmp/d6`
+Ddnsupd=`cat /tmp/d7`
+Ltime=`cat /tmp/d8`
+Mltime=`cat /tmp/d9`
+
+echo "subnet "$Subnet" netmask "$Netmask" {
+range $Frange $Trange;
+option domain-name-servers $ODNS;
+option routers $Routers;
+ddns-update-style $Ddnsupd;
+default-lease-time $Ltime;
+max-lease-time $Mltime;
+}" > /home/$USER/dhcpd.conf
+exit 0
+
