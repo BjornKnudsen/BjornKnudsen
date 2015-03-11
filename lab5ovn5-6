@@ -1,0 +1,26 @@
+#!/bin/bash
+Scpath=/home/bjorn/script
+Dpath=/home/bjorn/Documents
+Bupath=/home/bjorn/backup
+read -p "Vill du göra backup på dina script? [J/N] " Script
+#read -p "Vill du göra backup på dina dokument? [J/N]" Docs
+#read -p "Har du annan mapp du vill göra backup på[J/N]" Val1
+#if [ $Val1 = J ]; then
+#    read -p "ange hela sökvägen" Sokvag
+
+####### Script backup ########    
+case $Script in
+    [Jj])
+            if [ ! -e "$Scpath" -o ! -r "$Scpath" ]; then
+                echo "ERROR. /home/bjorn/script/ finns inte, eller är inte så är den inte läsbar."
+            elif [ ! -d "$Scpath" ]; then
+                echo "Script kunde inte identifieras som en katalog"
+#    elif [ $Script = J ]; then
+            else      
+            tar -czpf $Scpath/Script_Backup.tar.gz $Scpath
+            mv Script_Backup.tar.gz $Bupath
+            fi
+            ;;
+esac
+#############################
+

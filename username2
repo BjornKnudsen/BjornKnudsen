@@ -1,0 +1,5 @@
+#!/bin/bash
+echo -n "vad heter du?"
+read -t 3 Username
+echo "Hej $Username"
+exit 0

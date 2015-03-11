@@ -1,0 +1,5 @@
+#!/bin/bash
+Favoritfarg="Röd"
+read -t 1 -p "Vilken är din favoritfärg? " Favoritfarg
+Favoritfarg=${Favoritfarg:-"Röd"}
+echo -e "\nDin favoritfärg är $Favoritfarg."

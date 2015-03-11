@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Väntar på while.dat"
+while true ; do
+    if [ -e ./while.dat ]; then
+    echo "while.dat funnen!"
+    break
+    fi
+done
+exit 0

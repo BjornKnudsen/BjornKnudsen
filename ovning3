@@ -1,0 +1,3 @@
+#!/bin/bash
+read -p "Ange namn " Namn
+echo "$Namn" `date` >> /$HOME/namn.txt

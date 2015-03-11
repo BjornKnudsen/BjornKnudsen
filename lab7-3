@@ -1,0 +1,16 @@
+#!/bin/bash
+dialog --inputbox "Ange namn" 10 60 2> /tmp/a1
+dialog --passwordbox "Ange lösenord" 10 60 2> /tmp/a2
+
+Username=`cat /tmp/a1`
+Passwd=`cat /tmp/a2`
+
+sudo useradd -m $Username
+#sudo passwd $Passwd $Username
+#Sudo rm /tmp/.a2
+
+#echo $Username | grep useradd
+echo $Username:$Passwd | sudo chpasswd
+echo "Användaren $Username har lagts till"
+
+exit 0

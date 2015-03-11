@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Scriptet kommer låta dig skriva ett värde tills dess att det är 10-100, annars ber den dig skriva nytt värde.
+
+while true ; do
+    read -p "Ange ett tal från 10 till 100 " Tal 
+    if [ $Tal -lt 10 ]; then
+        echo "För litet värde"
+    elif [ $Tal -gt 100 ]; then
+        echo "För stort värde"
+    else
+        until [ $Tal -eq "0" ]; do
+            echo $Tal
+            Tal=$[ Tal - 1 ]
+        done
+        break
+    fi
+done
+exit 0
